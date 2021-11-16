@@ -29,15 +29,15 @@ const Filters = (props) => {
     const dynamicFilter = () => {
         switch(progress){
             case 0: 
-                return <Filter handleClick={next} keyValues={keyValues.holiday} key={"holiday"}/>
+                return <Filter handleClick={next} keyValues={keyValues.holiday} stateKey={"holiday"}/>
             case 1: 
-                return <Filter handleClick={next} keyValues={keyValues.meal} key={"meal"}/>
+                return <Filter handleClick={next} keyValues={keyValues.meal} stateKey={"meal"}/>
             case 2: 
-                return <Filter handleClick={next} keyValues={keyValues.course} key={"course"}/>
+                return <Filter handleClick={next} keyValues={keyValues.course} stateKey={"course"}/>
             case 3: 
-                return <Filter handleClick={next} keyValues={keyValues.ingredients} key={"ingredients"}/>
+                return <Filter handleClick={next} keyValues={keyValues.ingredients} stateKey={"ingredients"}/>
             case 4: 
-                return <Filter handleClick={next} keyValues={keyValues.time} key={"time"}/>
+                return <Filter handleClick={next} keyValues={keyValues.time} stateKey={"time"}/>
         }
     }
 
@@ -59,7 +59,7 @@ const Filters = (props) => {
 
     return(
         <div className="Filters">
-            <h2>Ready for a {props.holidy || "Merry Christmas"}</h2>
+            <h2>Ready for a {props.holiday || "Merry Christmas"}</h2>
             <div className="progressBar">{progress}</div>
                 { dynamicFilter() }
             <div className="changeQuestion">
