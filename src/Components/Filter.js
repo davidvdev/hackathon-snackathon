@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Filter = ({ handleClick, key, keyValues}) => {
+
+    const [selected, setSelected] = useState("")
+
     return ( 
         <div className="filter">
             <div className="options">
