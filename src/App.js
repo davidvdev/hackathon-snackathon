@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css';
 import Filters from './pages/Filters';
+import Results from './pages/Results';
 
 function App() {
 
@@ -24,7 +25,10 @@ function App() {
                 </Link>
             </div>
         }/>
-        <Route path="/filters/*" element={<Filters />} />
+        <Route path="/filters" element={<Filters />} />
+        {/* results page commented out until API call implemented */}
+        {/* <Route path="/recipes/*" element={<Results />}/> */}
+        <Route path="/recipes/*" element={<h1>Temp Recipie Page</h1>}/>
       </Routes>
     </Router>
   );

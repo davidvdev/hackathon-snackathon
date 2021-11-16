@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import Filter from "../components/Filter"
 
 const Filters = (props) => {
@@ -19,6 +20,13 @@ const Filters = (props) => {
     }
 
     const keyValues= {
+        question: [
+            "What HOLIDAY are we celebrating?",
+            "What MEAL are we preparing?",
+            "What COURSE is the dish?",
+            "What PROTEIN does it need?",
+            "How much TIME do we have?"
+            ],
         holiday: ["Thanksgiving", "Hannukah", "Christmas", "New Years Eve"],
         meal: ["Breakfast", "Lunch", "Dinner", "Dessert"],
         course: ["Appetizer", "Soup or Salad", "Main Course", "Side Dish"],
@@ -46,7 +54,11 @@ const Filters = (props) => {
             case 0: 
                 return  <button onClick={() => setProgress(progress + 1)}>Next Question</button>
             case 4:
-                return <button >Get Recipe</button>
+                return (
+                    <Link to="/recipes">
+                        <button >Get Recipe</button>
+                    </Link>
+                )
             default:
                 return(
                     <>
@@ -59,7 +71,7 @@ const Filters = (props) => {
 
     return(
         <div className="Filters">
-            <h2>Ready for a {props.holiday || "Merry Christmas"}</h2>
+            <h2>Ready for a {keyValues.question[progress]}</h2>
             <div className="progressBar">{progress}</div>
                 { dynamicFilter() }
             <div className="changeQuestion">

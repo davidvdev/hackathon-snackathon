@@ -4,7 +4,7 @@ import React from 'react'
 const Results = (props) => {
     return ( 
     <div>
-        <Navbar/> 
+        {/* <Navbar/>  */}
         <img src={props.results.img} /> 
         <h1>{props.results.name}</h1>
         //filter choices
