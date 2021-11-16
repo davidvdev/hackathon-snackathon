@@ -11,7 +11,8 @@ function App() {
     meal: "dinner"
   }
 
-  const [recipe, setRecipe] = useState(blankRecipe)
+  const [filteredRecipe, setFilteredRecipe] = useState(blankRecipe)
+  const [randomRecipe, setRandomRecipe] = useState(blankRecipe)
   
   return (
     <Router>
