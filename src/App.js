@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
+
+  const blankRecipe = {
+    type: "food",
+    meal: "dinner"
+  }
+
+  const [recipe, setRecipe] = useState(blankRecipe)
+  
   return (
-    <div className="App">
-      <h1>Snack Upon</h1>
-        <button>Search Random Recipes</button>
-        <button>Search With Filters?</button>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={
+              <div className="App">
+              <h1>Snack Upon</h1>
+                <button>Search Random Recipes</button>
+                <button>Search With Filters?</button>
+            </div>
+        }/>
+      </Routes>
+    </Router>
   );
 }
 
