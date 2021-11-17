@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import RandomRecipeCard from "./components/RandomRecipeCard";
+import "../src/CSS/landing.css";
 
 import Filters from "./pages/Filters";
 import Results from "./pages/Results";
@@ -35,7 +34,7 @@ function App() {
       "https://hackathon-snackathon.herokuapp.com/recipes/random";
     const data = await fetch(BASE_URL).then((res) => res.json());
     setRecipe(data);
-    console.log(data);
+    // console.log(data)
   }
 
   useEffect(() => {
@@ -43,6 +42,7 @@ function App() {
   }, []);
 
   const getFilteredRecipe = async (prefs) => {
+    console.log(prefs);
     // Set to RANDOM temporarily
     // Change to filtered once data set exists
     const response = await fetch(url + "recipes/random");
@@ -65,7 +65,7 @@ function App() {
           element={
             <div className="App">
               <h1>Reci-Please</h1>
-              <Buttons data={recipe} getAppData={getAppData} />
+              <Buttons data={recipe} getAppData={getRandomRecipe} />
             </div>
           }
         />

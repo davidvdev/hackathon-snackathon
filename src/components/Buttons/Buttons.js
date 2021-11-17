@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function randomButton () {
     return (
         console.log('random')
@@ -5,11 +7,18 @@ function randomButton () {
 }
 
 const Buttons = (props) => {
+
+function randomButton (props) {
+        console.log(props.data.name)
+    }
+
     return (
         <div>
-        <button onClick={randomButton}>Search Random Recipe</button>
-        <button>Search With Filters?</button>
-    </div>
+            <button onClick={() => randomButton(props)}>Search Random Recipe</button>
+            <Link to='/filters'>
+                <button>Search With Filters?</button>
+            </Link>
+        </div>
     )
 }
 
