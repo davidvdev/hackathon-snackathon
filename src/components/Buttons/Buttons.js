@@ -8,41 +8,25 @@ const Buttons = (props) => {
     const random = (obj) => {
         setRandomRecipe ({...randomRecipe, obj})
     }
-    function randomButton (props) {
+    // function randomButton (props) {
         
         
-        console.log(randomRecipe)
-        random(props.data)
-        props.getAppData()
+    //     console.log(randomRecipe)
+    //     random(props.data)
+    //     props.getAppData()
         
         
-        // console.log(props.data)
-    }
+    //     // console.log(props.data)
+    // }
     
     return (
         <div>
-            {randomRecipe !== 0 &&
-                <>
-                    <h1>{randomRecipe.obj.name}</h1>
-                    <h2>{randomRecipe.obj.description}</h2>
-                    <h3>{randomRecipe.obj.recipeingredientparts}</h3>
-                    <h4>{randomRecipe.obj.recipeingredientquantities}</h4>
-                </>
-            }
-            <div className='buttons'>
-                <div className='button'>
-                <h2>Find a Random Recipe</h2>
-                <img src='suprise_me.png' className='icon'/>
-                    <button className='click' onClick={() => randomButton(props)}>Random</button>
-                </div>
-                <div className='button'>  
-                    <h2>Search for a Recipe</h2>
-                    <img src='find_recipe.png' className='icon'/>
-                    <Link to='/filters'>
-                        <button className='click'>Search</button>
-                    </Link>  
-                </div>
-            </div>          
+            <Link to='/recipes'>
+                <button>Search Random Recipe</button>
+            </Link>
+            <Link to='/filters'>
+                <button>Search With Filters?</button>
+            </Link>
         </div>
     )
 }
