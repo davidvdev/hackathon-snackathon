@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css';
+
 import Filters from './pages/Filters';
 import Results from './pages/Results';
 
+import Buttons from './Components/Buttons/Buttons'
+
+
 function App() {
+  const [recipe, setRecipe] = useState([])
 
   const blankRecipe = {
     "_id": "",
@@ -24,6 +29,17 @@ function App() {
 
   const [filteredRecipe, setFilteredRecipe] = useState(blankRecipe)
   const [randomRecipe, setRandomRecipe] = useState(blankRecipe)
+  async function getAppData() {
+    const BASE_URL = 'https://hackathon-snackathon.herokuapp.com/recipes/random'
+    const data = await fetch(BASE_URL).then(res => res.json())
+    setRecipe(data)
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getAppData()
+  }, [])
+
   
   const getFilteredRecipe = async (prefs) => {
     // Set to RANDOM temporarily
@@ -44,11 +60,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={
               <div className="App">
-              <h1>Snack Upon</h1>
-                <button>Search Random Recipes</button>
-                <Link to="/filters">
-                  <button>Search With Filters?</button>
-                </Link>
+
+                <h1>Reci-Please</h1>
+                <Buttons data={recipe} getAppData={getAppData}/>
+
             </div>
         }/>
         <Route path="/filters" element={<Filters apiCall={getFilteredRecipe} />} />
