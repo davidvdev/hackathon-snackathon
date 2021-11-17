@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Navbar = (props) => {
+const Navbar = () => {
     return ( 
         <div>
-            <button><Link to="/App">Home</Link></button>
+            <button><Link to="/">Home</Link></button>
             <h1>Reci-Please</h1>
         </div>
     )

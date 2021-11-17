@@ -9,6 +9,7 @@ import Buttons from './components/Buttons/Buttons'
 
 
 function App() {
+
   const [recipe, setRecipe] = useState([])
 
   const blankRecipe = {
@@ -42,6 +43,7 @@ function App() {
 
   
   const getFilteredRecipe = async (prefs) => {
+    console.log(prefs)
     // Set to RANDOM temporarily
     // Change to filtered once data set exists
     const response = await fetch(url + 'recipes/random')

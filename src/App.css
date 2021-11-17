@@ -51,3 +51,8 @@
   margin: 1em;
   height: 20vh;
 }
+
+.options .selected {
+  background-color: #282c34;
+  color: white;
+}
