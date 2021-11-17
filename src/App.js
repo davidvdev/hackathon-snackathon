@@ -9,70 +9,79 @@ import Navbar from './components/Navbar'
 import Buttons from './components/Buttons/Buttons'
 
 
-function App() {
+import Filters from "./pages/Filters";
+import Results from "./pages/Results";
+import Buttons from "./components/Buttons/Buttons";
+import RandomRecipeCard from "./components/RandomRecipeCard";
 
-  const [recipe, setRecipe] = useState([])
+function App() {
+  const [recipe, setRecipe] = useState([]);
 
   const blankRecipe = {
-    "_id": "",
-    "name": "",
-    "ingredients": [
+    _id: "",
+    name: "",
+    ingredients: [
       {
-        "name": "",
-        "amount": "",
-        "_id": ""
-      }
+        name: "",
+        amount: "",
+        _id: "",
+      },
     ],
-    "description": "",
-    "__v": 0
-  }
+    description: "",
+    __v: 0,
+  };
 
-  const url = "https://hackathon-snackathon.herokuapp.com/"
+  const url = "https://hackathon-snackathon.herokuapp.com/";
 
-  const [filteredRecipe, setFilteredRecipe] = useState(blankRecipe)
-  const [randomRecipe, setRandomRecipe] = useState(blankRecipe)
+  const [filteredRecipe, setFilteredRecipe] = useState(blankRecipe);
+  const [randomRecipe, setRandomRecipe] = useState(blankRecipe);
   async function getAppData() {
-    const BASE_URL = 'https://hackathon-snackathon.herokuapp.com/recipes/random'
-    const data = await fetch(BASE_URL).then(res => res.json())
-    setRecipe(data)
+    const BASE_URL =
+      "https://hackathon-snackathon.herokuapp.com/recipes/random";
+    const data = await fetch(BASE_URL).then((res) => res.json());
+    setRecipe(data);
     // console.log(data)
   }
 
   useEffect(() => {
-    getAppData()
-  }, [])
+    getAppData();
+  }, []);
 
-  
   const getFilteredRecipe = async (prefs) => {
-    console.log(prefs)
+    console.log(prefs);
     // Set to RANDOM temporarily
     // Change to filtered once data set exists
-    const response = await fetch(url + 'recipes/random')
-    const data = await response.json()
-    setFilteredRecipe(data)
-  }
+    const response = await fetch(url + "recipes/random");
+    const data = await response.json();
+    setFilteredRecipe(data);
+  };
 
   const getRandomRecipe = async () => {
-    const response = await fetch(url + 'recipes/random/')
-    const data = await response.json()
-    setRandomRecipe(data)
-  }
+    const response = await fetch(url + "recipes/random/");
+    const data = await response.json();
+    setRandomRecipe(data);
+  };
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={
-              <div className="App">
-
-                <Navbar />
-                <Buttons data={recipe} getAppData={getRandomRecipe}/>
-
+        <Route
+          exact
+          path="/"
+          element={
+            <div className="App">
+              <h1>Reci-Please</h1>
+              <Buttons data={recipe} getAppData={getRandomRecipe} />
             </div>
-        }/>
-        <Route path="/filters" element={<Filters apiCall={getFilteredRecipe} />} />
+          }
+        />
+        <Route
+          path="/filters"
+          element={<Filters apiCall={getFilteredRecipe} />}
+        />
         {/* results page commented out until API call implemented */}
         {/* <Route path="/recipes/*" element={<Results />}/> */}
-        <Route path="/recipes/*" element={<h1>{randomRecipe.name || "none"}</h1>}/>
+        <Route path="/recipes/*" element={<RandomRecipeCard />} />
       </Routes>
     </Router>
   );
