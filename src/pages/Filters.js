@@ -13,7 +13,7 @@ const Filters = ({ apiCall }) => {
   const [choices, setChoices] = useState(emptyChoices);
 
   const next = (key, value) => {
-    setChoices({ ...choices, [key]: value });
+    setChoices({ ...choices, [key]: value.toLowerCase() });
   };
 
   const keyValues = {
