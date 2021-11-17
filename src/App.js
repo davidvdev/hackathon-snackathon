@@ -43,15 +43,22 @@ function App() {
   }
 
   useEffect(() => {
-    getAppData();
+    // getAppData();
   }, []);
 
   const getFilteredRecipe = async (prefs) => {
     console.log(prefs);
     // Set to RANDOM temporarily
     // Change to filtered once data set exists
-    const response = await fetch(url + "recipes/random");
+    const response = await fetch(url + "recipes/random",{
+      method: 'post',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(prefs)
+    });
     const data = await response.json();
+    console.log("data: ", data)
     setFilteredRecipe(data);
   };
 
