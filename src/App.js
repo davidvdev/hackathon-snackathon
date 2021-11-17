@@ -44,6 +44,7 @@ function App() {
 
   
   const getFilteredRecipe = async (prefs) => {
+    console.log(prefs)
     // Set to RANDOM temporarily
     // Change to filtered once data set exists
     const response = await fetch(url + 'recipes/random')
