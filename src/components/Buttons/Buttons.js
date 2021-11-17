@@ -20,18 +20,21 @@ const Buttons = (props) => {
     
     return (
                 <div>
-                    {randomRecipe !== 0 &&
+
+                    {/* {randomRecipe !== 0 &&
                     <>
                         <h1>{randomRecipe.obj.name}</h1>
                         <h2>{randomRecipe.obj.description}</h2>
                         <h3>{randomRecipe.obj.recipeingredientparts}</h3>
                         <h4>{randomRecipe.obj.recipeingredientquantities}</h4>
                     </>
-                    }
-                
+                    } */}
+
         <div>
                 </div>
-            <button onClick={() => randomButton(props)}>Search Random Recipe</button>
+            <Link to='/recipes'>
+            <button>Search Random Recipe</button>
+            </Link>
             <Link to='/filters'>
                 <button>Search With Filters?</button>
             </Link>
