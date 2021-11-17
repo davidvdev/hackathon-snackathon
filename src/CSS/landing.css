@@ -6,14 +6,15 @@
 .buttons{
     display: flex;
     justify-content: center;
+
 }
 
 .button{
     border: 1px solid #092C4C;
-    width: 200px;
-    height: 210px;
+    width: 50%;
+    height: 16em;
     padding: .5em;
-
+    margin: 1em;
 }
 
 .foodimage{
