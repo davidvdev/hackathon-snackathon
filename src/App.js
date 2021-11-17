@@ -34,7 +34,7 @@ function App() {
   }
 
   const getRandomRecipe = async () => {
-    const response = await fetch(url + '/recipes/random')
+    const response = await fetch(url + 'recipes/random/')
     const data = await response.json()
     setRandomRecipe(data)
   }
@@ -51,10 +51,10 @@ function App() {
                 </Link>
             </div>
         }/>
-        <Route path="/filters" element={<Filters />} />
+        <Route path="/filters" element={<Filters apiCall={getFilteredRecipe} />} />
         {/* results page commented out until API call implemented */}
         {/* <Route path="/recipes/*" element={<Results />}/> */}
-        <Route path="/recipes/*" element={<h1>Temp Recipie Page</h1>}/>
+        <Route path="/recipes/*" element={<h1>{randomRecipe.name || "none"}</h1>}/>
       </Routes>
     </Router>
   );

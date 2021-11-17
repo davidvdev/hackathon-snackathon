@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import Filter from "../components/Filter"
 
-const Filters = (props) => {
+const Filters = ({apiCall}) => {
 
     const emptyChoices = {
         holiday: "",
@@ -56,7 +56,7 @@ const Filters = (props) => {
             case 4:
                 return (
                     <Link to="/recipes">
-                        <button >Get Recipe</button>
+                        <button onClick={() => apiCall()}>Get Recipe</button>
                     </Link>
                 )
             default:
