@@ -110,7 +110,6 @@ const Filters = ({ apiCall }) => {
   return (
     <div className="Filters">
       <div className="progressBar">
-        <h2>{keyValues.question[progress]}</h2>
         {iconProgress.map((icon, index) => <img src={icon} key={index} alt={index}/>)} 
       </div>
       <div className="progressBar">{progress}</div>
