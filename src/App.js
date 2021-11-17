@@ -35,7 +35,7 @@ function App() {
     const BASE_URL = 'https://hackathon-snackathon.herokuapp.com/recipes/random'
     const data = await fetch(BASE_URL).then(res => res.json())
     setRecipe(data)
-    console.log(data)
+    // console.log(data)
   }
 
   useEffect(() => {
@@ -65,8 +65,7 @@ function App() {
               <div className="App">
 
                 <h1>Reci-Please</h1>
-                <img src=''/>
-                <Buttons data={recipe} getAppData={getAppData}/>
+                <Buttons data={recipe} getAppData={getRandomRecipe}/>
 
             </div>
         }/>

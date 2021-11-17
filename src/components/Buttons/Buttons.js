@@ -7,18 +7,17 @@ function randomButton () {
 }
 
 const Buttons = (props) => {
+
+function randomButton (props) {
+        console.log(props.data.name)
+    }
+
     return (
-        <div className='buttons'>
-            <div className='button'>
-                <h1>See a Random Recipe</h1>
-                <button onClick={randomButton}>Random Recipe</button>
-            </div>
-            <div className='button'>
-            <h1>Search for a Recipe</h1>
-                <Link to='/filters'>
-                    <button>Search!</button>
-                </Link>
-            </div>
+        <div>
+            <button onClick={() => randomButton(props)}>Search Random Recipe</button>
+            <Link to='/filters'>
+                <button>Search With Filters?</button>
+            </Link>
         </div>
     )
 }
