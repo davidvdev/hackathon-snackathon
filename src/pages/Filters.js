@@ -45,9 +45,12 @@ const Filters = ({apiCall}) => {
                 return  <button onClick={() => setProgress(progress + 1)}>Next Question</button>
             case 2:
                 return (
-                    <Link to="/recipes">
-                        <button onClick={() => apiCall(choices)}>Get Recipe</button>
-                    </Link>
+                    <>
+                    <button onClick={() => setProgress(progress - 1)}>Previous Question</button>
+                        <Link to="/recipes">
+                            <button onClick={() => apiCall(choices)}>Get Recipe</button>
+                        </Link>
+                    </>
                 )
             default:
                 return(
