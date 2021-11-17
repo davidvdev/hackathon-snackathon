@@ -36,23 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.options {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* replace with classname of card component */
-.options button {
-  width: 40%;
-  padding: 1em;
-  margin: 1em;
-  height: 20vh;
-}
-
-.options .selected {
-  background-color: #282c34;
-  color: white;
-}

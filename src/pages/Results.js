@@ -1,19 +1,18 @@
-import React from 'react'
 import Navbar from '../components/Navbar.js'
 
-const Results = (props) => {
+const Results = ({recipe}) => {
     return ( 
     <div>
         {/* <Navbar/>  */}
-        <img src={props.results.img} /> 
-        <h1>{props.results.name}</h1>
+        <img src={recipe.images || 'https://media.istockphoto.com/photos/food-backgrounds-table-filled-with-large-variety-of-food-picture-id1155240408'} /> 
+        <h1>{recipe.name}</h1>
         {/* filter choices */}
         <h2>Ingredients</h2>
         <div className='recipe'>
             <ul>
-            {props.results.ingredients.map((item, index) => {
+            {recipe.recipeingredientparts.map((item, index) => {
               return (
-                      <li>{item}</li> 
+                      <li key={index}>{recipe.recipeingredientquantities[index]} {item}</li> 
               )
            })}
           </ul>
@@ -21,15 +20,14 @@ const Results = (props) => {
         <h2>Directions</h2>
         <div className=''>
             <ul>
-            {props.results.directions.map((item, index) => {
+            {recipe.recipeinstructions.map((item, index) => {
               return (
-                  <li>{item}</li>    
+                  <li key={index}>{item}</li>    
                  )
            })}
           </ul>
         </div>
     </div>
-
     )
 }
 export default Results

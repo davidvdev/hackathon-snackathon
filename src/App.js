@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import './App.css';
-import '../src/CSS/landing.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import "../src/CSS/landing.css";
+import "../src/CSS/filters.css";
 
-import Filters from './pages/Filters';
-import Results from './pages/Results';
+import Filters from "./pages/Filters";
+import Results from "./pages/Results";
 import Navbar from './components/Navbar'
-import Buttons from './components/Buttons/Buttons'
-import RecipeShowPage from './components/RecipeShowPage'
+import Buttons from "./components/Buttons/Buttons";
+import RecipeShowPage from "./components/RecipeShowPage";
+
 // import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
@@ -110,8 +113,8 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <h1 className='maintitle'>Reci-Please</h1>
-                <img src='food.jpg' className='foodimage'/>
+              <h1 className="maintitle">Reci-Please</h1>
+              <img src="food.jpg" className="foodimage" />
               <Buttons data={recipe} getAppData={getRandomRecipe} />
             </div>
           }
@@ -121,11 +124,8 @@ function App() {
           element={<Filters apiCall={getFilteredRecipe} />}
         />
         {/* results page commented out until API call implemented */}
-        {/* <Route path="/recipes/*" element={<Results />}/> */}
-        <Route
-          path="/recipes/*"
-          element={<RecipeShowPage recipe={testrecipe} />}
-        />
+        <Route path="/recipes/*" element={<Results recipe={recipe}/>}/>
+        {/* <Route path="/recipes/*" element={<RandomRecipeCard />} /> */}
       </Routes>
     </Router>
   );
