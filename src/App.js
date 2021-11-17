@@ -5,7 +5,7 @@ import './App.css';
 import Filters from './pages/Filters';
 import Results from './pages/Results';
 
-import Buttons from './Components/Buttons/Buttons'
+import Buttons from './components/Buttons/Buttons'
 
 
 function App() {
