@@ -5,7 +5,7 @@ import '../src/CSS/landing.css'
 
 import Filters from './pages/Filters';
 import Results from './pages/Results';
-
+import Navbar from './components/Navbar'
 import Buttons from './components/Buttons/Buttons'
 
 
@@ -64,7 +64,7 @@ function App() {
         <Route exact path="/" element={
               <div className="App">
 
-                <h1>Reci-Please</h1>
+                <Navbar />
                 <Buttons data={recipe} getAppData={getRandomRecipe}/>
 
             </div>
