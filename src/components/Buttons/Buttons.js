@@ -24,6 +24,8 @@ const Buttons = (props) => {
                     <>
                         <h1>{randomRecipe.obj.name}</h1>
                         <h2>{randomRecipe.obj.description}</h2>
+                        <h3>{randomRecipe.obj.recipeingredientparts}</h3>
+                        <h4>{randomRecipe.obj.recipeingredientquantities}</h4>
                     </>
                     }
                 
