@@ -111,8 +111,8 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <h1 className='maintitle'>Reci-Please</h1>
-                <img src='food.jpg' className='foodimage'/>
+              <h1 className="maintitle">Reci-Please</h1>
+              <img src="food.jpg" className="foodimage" />
               <Buttons data={recipe} getAppData={getRandomRecipe} />
             </div>
           }
