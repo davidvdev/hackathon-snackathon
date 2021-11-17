@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
+const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
 
     const [selected, setSelected] = useState("")
 
@@ -20,7 +20,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
                         select(event.target.name)
                     }}
                 >
-                    {keyValues[0]}
+                    <img src={icons[0]} alt={keyValues[0]}/>
                 </button>
                 <button 
                     className={ selected === 'op1' ? 'selected' : null }
@@ -30,7 +30,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
                         select(event.target.name)
                     }}
                 >
-                    {keyValues[1]}
+                    <img src={icons[1]} alt={keyValues[1]}/>
                 </button>
                 <button 
                     className={ selected === 'op2' ? 'selected' : null }
@@ -40,7 +40,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
                         select(event.target.name)
                     }}
                 >
-                    {keyValues[2]}
+                    <img src={icons[2]} alt={keyValues[2]}/>
                 </button>
                 <button 
                     className={ selected === 'op3' ? 'selected' : null }
@@ -50,7 +50,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
                         select(event.target.name)
                     }}
                 >
-                    {keyValues[3]}
+                    <img src={icons[3]} alt={keyValues[3]}/>
                 </button>
             </div>
         </div>

@@ -27,6 +27,12 @@ const Filters = ({ apiCall }) => {
     time: ["30 Minutes", "1 Hour", "1 Hour 30 Minutes", "2 or More Hours"],
   };
 
+  const icons = {
+    holiday: ['./thanksgiving.png', './hanukkah.png','./christmas.png','./new_year.png'],
+    meal: ['./breakfast.png', './lunch.png', './dinner.png', './dessert.png'],
+    time: ['./30_min.png', './1_hour.png', '1_hour_30.png', '2_hour.png']
+  }
+
   const dynamicFilter = () => {
     switch (progress) {
       case 0:
@@ -36,6 +42,7 @@ const Filters = ({ apiCall }) => {
             progress={progress}
             keyValues={keyValues.holiday}
             stateKey={"holiday"}
+            icons={icons.holiday}
           />
         );
       case 1:
@@ -45,6 +52,7 @@ const Filters = ({ apiCall }) => {
             progress={progress}
             keyValues={keyValues.meal}
             stateKey={"meal"}
+            icons={icons.meal}
           />
         );
       case 2:
@@ -54,6 +62,7 @@ const Filters = ({ apiCall }) => {
             progress={progress}
             keyValues={keyValues.time}
             stateKey={"time"}
+            icons={icons.time}
           />
         );
     }
