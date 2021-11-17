@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css";
-import "../src/CSS/landing.css";
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import './App.css';
+import '../src/CSS/landing.css'
 
-import Filters from "./pages/Filters";
-import Results from "./pages/Results";
-import Buttons from "./components/Buttons/Buttons";
+import Filters from './pages/Filters';
+import Results from './pages/Results';
+import Navbar from './components/Navbar'
+import Buttons from './components/Buttons/Buttons'
 import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
