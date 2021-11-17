@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import RandomRecipeCard from "./Components/RandomRecipeCard";
+import RandomRecipeCard from "./components/RandomRecipeCard";
 
-import Filters from "./Pages/Filters";
-// import Results from "./pages/Results";
+import Filters from "./pages/Filters";
+import Results from "./pages/Results";
 
-import Buttons from "./Components/Buttons/Buttons";
+import Buttons from "./components/Buttons/Buttons";
 
 function App() {
   const [recipe, setRecipe] = useState([]);

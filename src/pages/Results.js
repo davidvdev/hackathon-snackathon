@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from 'Components/Navbar.js'
+import Navbar from '../components/Navbar.js'
 
 const Results = (props) => {
     return ( 
