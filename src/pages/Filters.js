@@ -11,15 +11,15 @@ const Filters = ({ apiCall }) => {
 
   const [progress, setProgress] = useState(0);
   const [choices, setChoices] = useState(emptyChoices);
-  const [iconProgress, setIconProgress] = useState([])
+  const [iconProgress, setIconProgress] = useState([]);
 
   const next = (key, value) => {
     setChoices({ ...choices, [key]: value.toLowerCase() });
   };
 
   const setIcon = (icon) => {
-    setIconProgress([...iconProgress, icon])
-  }
+    setIconProgress([...iconProgress, icon]);
+  };
 
   const keyValues = {
     question: [
@@ -33,10 +33,15 @@ const Filters = ({ apiCall }) => {
   };
 
   const icons = {
-    holiday: ['./thanksgiving.png', './hanukkah.png','./christmas.png','./new_year.png'],
-    meal: ['./breakfast.png', './lunch.png', './dinner.png', './dessert.png'],
-    time: ['./30_min.png', './1_hour.png', '1_hour_30.png', '2_hour.png']
-  }
+    holiday: [
+      "./thanksgiving.png",
+      "./hanukkah.png",
+      "./christmas.png",
+      "./new_year.png",
+    ],
+    meal: ["./breakfast.png", "./lunch.png", "./dinner.png", "./dessert.png"],
+    time: ["./30_min.png", "./1_hour.png", "1_hour_30.png", "2_hour.png"],
+  };
 
   const dynamicFilter = () => {
     switch (progress) {
@@ -111,7 +116,9 @@ const Filters = ({ apiCall }) => {
     <div className="Filters">
       <div className="progressBar">
         <h2>{keyValues.question[progress]}</h2>
-        {iconProgress.map((icon, index) => <img src={icon} key={index} alt={index}/>)} 
+        {iconProgress.map((icon, index) => (
+          <img src={icon} key={index} alt={index} />
+        ))}
       </div>
       <div className="progressBar">{progress}</div>
       {dynamicFilter()}
