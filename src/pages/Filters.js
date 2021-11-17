@@ -31,11 +31,11 @@ const Filters = ({apiCall}) => {
     const dynamicFilter = () => {
         switch(progress){
             case 0: 
-                return <Filter handleClick={next} keyValues={keyValues.holiday} stateKey={"holiday"}/>
+                return <Filter handleClick={next} progress={progress} keyValues={keyValues.holiday} stateKey={"holiday"}/>
             case 1: 
-                return <Filter handleClick={next} keyValues={keyValues.meal} stateKey={"meal"}/>
+                return <Filter handleClick={next} progress={progress} keyValues={keyValues.meal} stateKey={"meal"}/>
             case 2: 
-                return <Filter handleClick={next} keyValues={keyValues.time} stateKey={"time"}/>
+                return <Filter handleClick={next} progress={progress} keyValues={keyValues.time} stateKey={"time"}/>
         }
     }
 

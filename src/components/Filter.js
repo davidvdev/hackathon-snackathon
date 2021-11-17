@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Filter = ({ handleClick, stateKey, keyValues}) => {
+const Filter = ({ handleClick, stateKey, keyValues, progress}) => {
 
     const [selected, setSelected] = useState("")
 
@@ -13,7 +13,7 @@ const Filter = ({ handleClick, stateKey, keyValues}) => {
             <div className="options">
                 {/* buttons are placeholders for card component */}
                 <button
-                    className={ selected == 'op0' ? 'selected' : null }
+                    className={ selected == 'op0' && progress == 0? 'selected' : null }
                     name='op0'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[0])
@@ -23,7 +23,7 @@ const Filter = ({ handleClick, stateKey, keyValues}) => {
                     {keyValues[0]}
                 </button>
                 <button 
-                    className={ selected == 'op1' ? 'selected' : null }
+                    className={ selected == 'op1' && progress == 1 ? 'selected' : null }
                     name= 'op1'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[1])
@@ -33,7 +33,7 @@ const Filter = ({ handleClick, stateKey, keyValues}) => {
                     {keyValues[1]}
                 </button>
                 <button 
-                    className={ selected == 'op2' ? 'selected' : null }
+                    className={ selected == 'op2' && progress == 2 ? 'selected' : null }
                     name= 'op2'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[2])
@@ -43,7 +43,7 @@ const Filter = ({ handleClick, stateKey, keyValues}) => {
                     {keyValues[2]}
                 </button>
                 <button 
-                    className={ selected == 'op3' ? 'selected' : null }
+                    className={ selected == 'op3' && progress == 3 ? 'selected' : null }
                     name= 'op3'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[3])
