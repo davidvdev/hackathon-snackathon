@@ -33,7 +33,9 @@ const Buttons = (props) => {
                 <div className='button'>
                 <h2>Find a Random Recipe</h2>
                 <img src='suprise_me.png' className='icon'/>
-                    <button className='click' onClick={() => randomButton(props)}>Random</button>
+                <Link to="/recipes/random">
+                    <button className='click' onClick={props.getAppData}>Random</button>
+                </Link>
                 </div>
                 <div className='button'>  
                     <h2>Search for a Recipe</h2>
