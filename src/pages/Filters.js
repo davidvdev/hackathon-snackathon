@@ -101,7 +101,7 @@ const Filters = ({ apiCall }) => {
   };
   return (
     <div className="Filters">
-      <h2>Ready for a {keyValues.question[progress]}</h2>
+      <h2>{keyValues.question[progress]}</h2>
       <div className="progressBar">{progress}</div>
       {dynamicFilter()}
       <div className="changeQuestion">{dynamicButton()}</div>
