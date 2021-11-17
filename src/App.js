@@ -9,7 +9,7 @@ import Results from "./pages/Results";
 import Navbar from './components/Navbar'
 import Buttons from "./components/Buttons/Buttons";
 import RecipeShowPage from "./components/RecipeShowPage";
-import RandomRecipeCard from "./components/RandomRecipeCard";
+// import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
   const [recipe, setRecipe] = useState([]);
