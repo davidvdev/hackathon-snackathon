@@ -5,8 +5,8 @@ import "../src/CSS/landing.css";
 
 import Filters from "./pages/Filters";
 import Results from "./pages/Results";
-
 import Buttons from "./components/Buttons/Buttons";
+import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
   const [recipe, setRecipe] = useState([]);
