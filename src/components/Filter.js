@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
+const Filter = ({ handleClick, stateKey, keyValues, progress, icons, setIcon}) => {
 
     const [selected, setSelected] = useState("")
 
     const select = (target) => {
-        setSelected(target)
+        setSelected(target.name)
+        setIcon(target.children[0].currentSrc)
     }
 
     return ( 
@@ -17,7 +18,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
                     name='op0'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[0])
-                        select(event.target.name)
+                        select(event.target)
                     }}
                 >
                     <img src={icons[0]} alt={keyValues[0]}/>
@@ -27,7 +28,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
                     name= 'op1'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[1])
-                        select(event.target.name)
+                        select(event.target)
                     }}
                 >
                     <img src={icons[1]} alt={keyValues[1]}/>
@@ -37,7 +38,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
                     name= 'op2'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[2])
-                        select(event.target.name)
+                        select(event.target)
                     }}
                 >
                     <img src={icons[2]} alt={keyValues[2]}/>
@@ -47,7 +48,7 @@ const Filter = ({ handleClick, stateKey, keyValues, progress, icons}) => {
                     name= 'op3'
                     onClick={(event) => {
                         handleClick(stateKey, keyValues[3])
-                        select(event.target.name)
+                        select(event.target)
                     }}
                 >
                     <img src={icons[3]} alt={keyValues[3]}/>
