@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import './App.css';
-import '../src/CSS/landing.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import "../src/CSS/landing.css";
 
-import Filters from './pages/Filters';
-import Results from './pages/Results';
+import Filters from "./pages/Filters";
+import Results from "./pages/Results";
 import Navbar from './components/Navbar'
-import Buttons from './components/Buttons/Buttons'
+import Buttons from "./components/Buttons/Buttons";
+import RecipeShowPage from "./components/RecipeShowPage";
 import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
@@ -55,6 +57,50 @@ function App() {
     const response = await fetch(url + "recipes/random/");
     const data = await response.json();
     setRandomRecipe(data);
+  };
+  const testrecipe = {
+    name: "Turnip and Onion Hot Dish",
+    description:
+      "This is a delicious dish that goes well with most winter main dishes.  It is very easy to make and is a good alternative to scalloped potatoes.",
+    images:
+      "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/51/39/picPFVZcX.jpg",
+    recipeingredientquantities: ["2", "2", "NA", "1", "1/2", "2"],
+    recipeingredientparts: [
+      "turnips",
+      "onions",
+      "chicken bouillon cube",
+      "boiling water",
+      "butter",
+      "margarine",
+    ],
+    recipeservings: 6,
+    recipeinstructions: [
+      "Preheat oven to 400 degrees F.",
+      "Peel turnips",
+      "cut in half lenthwise",
+      "then slice each half crosswise into thin slices.",
+      "Arrange alternate layers of turnip and onion in a greased 2 1/2-quart casserole dish.",
+      "Sprinkle lightly with salt and pepper.",
+      "Dissolve bouillon cube in boiling water and pour over vegetables.",
+      "Dot with butter or margarine.",
+      "Cover casserole with foil or lid and bake 1 hour 15 minutes",
+      "or until turnips are tender.",
+    ],
+    cooktimeamt: "1",
+    cookunitoftime: "H",
+    preptimeamt: "15",
+    prepunitoftime: "M",
+    totalhours: "1",
+    totalminutes: "30",
+    christmas: 1,
+    thanksgiving: 0,
+    hannukah: 0,
+    nye: 0,
+    breakfast: 0,
+    lunch: 0,
+    dessert: 0,
+    dinner: 1,
+    __v: 0,
   };
 
   return (
