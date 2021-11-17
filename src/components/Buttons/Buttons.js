@@ -2,8 +2,7 @@ const Buttons = (props) => {
 
 function randomButton (props) {
         console.log(props.data.name)
-}
-    
+    }
 
     return (
         <div>
