@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css';
+import '../src/CSS/landing.css'
 
 import Filters from './pages/Filters';
 import Results from './pages/Results';
@@ -63,6 +64,7 @@ function App() {
               <div className="App">
 
                 <h1>Reci-Please</h1>
+                <img src=''/>
                 <Buttons data={recipe} getAppData={getAppData}/>
 
             </div>
