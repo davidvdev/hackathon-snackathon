@@ -1,35 +1,41 @@
 import React from "react";
 import { Container, Card, Button, Row, Col, Image } from "react-bootstrap";
 
-export default function RandomRecipeCard() {
+export default function RecipeShowPage(props) {
+  const ingredientsListMap = props.recipe.recipeingredientquantities.map(
+    (elem, idx) => (
+      <h5>
+        {elem} {props.recipe.recipeingredientparts[idx]}
+      </h5>
+    )
+  );
+  const instructionsMapped = props.recipe.recipeinstructions.map((elem) => (
+    <h5>{elem}</h5>
+  ));
   return (
     <>
       <Container className="d-flex flex-column bg-light">
-        <h1 className="text-center">Dish Name Here</h1>
-        <Row>
-          <Col></Col>
-          <Col xs={6}>
-            <Image
-              src="https://media.istockphoto.com/photos/food-backgrounds-table-filled-with-large-variety-of-food-picture-id1155240408"
-              fluid
-              rounded
-            ></Image>
-          </Col>
-          <Col></Col>
-        </Row>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
+        <h1 className="text-center">{props.recipe.name}</h1>
+        <Image
+          className="mx-auto"
+          src={props.recipe.images}
+          fluid
+          rounded
+        ></Image>
 
         <h3 className="text-center">icons here</h3>
         <h3 className="text-center">
-          Ready in: XYZ Minutes Serves: XYZ people
+          Ready in:{" "}
+          {props.recipe.totalminutes
+            ? props.recipe.totalhours + ":" + props.recipe.totalminutes
+            : props.recipe.totalhours}{" "}
+          Serves: {props.recipe.recipeservings}
         </h3>
         <h3>Ingredients</h3>
-        <h4>Ingredients here</h4>
+        {ingredientsListMap}
         <br />
         <h3>Direction</h3>
-        <h4>Directions Here</h4>
+        {instructionsMapped}
       </Container>
       {/* <Container className="d-flex flex-column bg-dark">
         <Container className="d-flex flex-column align-items-center">
