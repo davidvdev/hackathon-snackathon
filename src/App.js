@@ -4,8 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import RandomRecipeCard from "./Components/RandomRecipeCard";
 
+
 import Filters from "./Pages/Filters";
 // import Results from "./pages/Results";
+import Results from './pages/Results';
+
+import Buttons from './components/Buttons/Buttons'
+
 
 import Buttons from "./Components/Buttons/Buttons";
 
