@@ -7,13 +7,38 @@ import Results from './pages/Results';
 function App() {
 
   const blankRecipe = {
-    type: "food",
-    meal: "dinner"
+    "_id": "",
+    "name": "",
+    "ingredients": [
+      {
+        "name": "",
+        "amount": "",
+        "_id": ""
+      }
+    ],
+    "description": "",
+    "__v": 0
   }
+
+  const url = "https://hackathon-snackathon.herokuapp.com/"
 
   const [filteredRecipe, setFilteredRecipe] = useState(blankRecipe)
   const [randomRecipe, setRandomRecipe] = useState(blankRecipe)
   
+  const getFilteredRecipe = async (prefs) => {
+    // Set to RANDOM temporarily
+    // Change to filtered once data set exists
+    const response = await fetch(url + '/recipes/random')
+    const data = await response.json()
+    setFilteredRecipe(data)
+  }
+
+  const getRandomRecipe = async () => {
+    const response = await fetch(url + '/recipes/random')
+    const data = await response.json()
+    setRandomRecipe(data)
+  }
+
   return (
     <Router>
       <Routes>
