@@ -4,14 +4,54 @@ const Filter = ({ handleClick, stateKey, keyValues}) => {
 
     const [selected, setSelected] = useState("")
 
+    const select = (target) => {
+        setSelected(target)
+    }
+
     return ( 
         <div className="filter">
             <div className="options">
                 {/* buttons are placeholders for card component */}
-                <button onClick={() => handleClick(stateKey, keyValues[0])}>{keyValues[0]}</button>
-                <button onClick={() => handleClick(stateKey, keyValues[1])}>{keyValues[1]}</button>
-                <button onClick={() => handleClick(stateKey, keyValues[2])}>{keyValues[2]}</button>
-                <button onClick={() => handleClick(stateKey, keyValues[3])}>{keyValues[3]}</button>
+                <button
+                    className={ selected == 'op0' ? 'selected' : null }
+                    name='op0'
+                    onClick={(event) => {
+                        handleClick(stateKey, keyValues[0])
+                        select(event.target.name)
+                    }}
+                >
+                    {keyValues[0]}
+                </button>
+                <button 
+                    className={ selected == 'op1' ? 'selected' : null }
+                    name= 'op1'
+                    onClick={(event) => {
+                        handleClick(stateKey, keyValues[1])
+                        select(event.target.name)
+                    }}
+                >
+                    {keyValues[1]}
+                </button>
+                <button 
+                    className={ selected == 'op2' ? 'selected' : null }
+                    name= 'op2'
+                    onClick={(event) => {
+                        handleClick(stateKey, keyValues[2])
+                        select(event.target.name)
+                    }}
+                >
+                    {keyValues[2]}
+                </button>
+                <button 
+                    className={ selected == 'op3' ? 'selected' : null }
+                    name= 'op3'
+                    onClick={(event) => {
+                        handleClick(stateKey, keyValues[3])
+                        select(event.target.name)
+                    }}
+                >
+                    {keyValues[3]}
+                </button>
             </div>
         </div>
     )
