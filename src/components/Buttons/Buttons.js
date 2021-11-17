@@ -31,15 +31,15 @@ const Buttons = (props) => {
             }
             <div className='buttons'>
                 <div className='button'>
-                <h2>Click for a Random Recipe</h2>
-                <img src=''/>
-                    <button onClick={() => randomButton(props)}>Random Recipe</button>
+                <h2>Find a Random Recipe</h2>
+                <img src='suprise_me.png' className='icon'/>
+                    <button className='click' onClick={() => randomButton(props)}>Random</button>
                 </div>
                 <div className='button'>  
                     <h2>Search for a Recipe</h2>
-                    <img src=''/>
+                    <img src='find_recipe.png' className='icon'/>
                     <Link to='/filters'>
-                        <button>Find a Recipe</button>
+                        <button className='click'>Search</button>
                     </Link>  
                 </div>
             </div>          
