@@ -96,7 +96,9 @@ function App() {
           element={<Filters apiCall={getFilteredRecipe} />}
         />
         {/* results page commented out until API call implemented */}
+
         <Route path="/recipes/*" element={<RecipeShowPage recipe={recipe} />} />
+
         {/* <Route path="/recipes/*" element={<RandomRecipeCard />} /> */}
       </Routes>
     </Router>
