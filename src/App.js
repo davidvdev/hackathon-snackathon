@@ -7,11 +7,6 @@ import Filters from './pages/Filters';
 import Results from './pages/Results';
 import Navbar from './components/Navbar'
 import Buttons from './components/Buttons/Buttons'
-
-
-import Filters from "./pages/Filters";
-import Results from "./pages/Results";
-import Buttons from "./components/Buttons/Buttons";
 import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
