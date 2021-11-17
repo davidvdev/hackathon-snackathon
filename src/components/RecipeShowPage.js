@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Card, Button, Row, Col, Image } from "react-bootstrap";
+import '../../src/CSS/showpage.css'
 
 export default function RecipeShowPage(props) {
   const ingredientsListMap = props.recipe.recipeingredientquantities.map(
@@ -31,10 +32,10 @@ export default function RecipeShowPage(props) {
             : props.recipe.totalhours}{" "}
           Serves: {props.recipe.recipeservings}
         </h3>
-        <h3>Ingredients</h3>
+        <h3 className='green-text'>Ingredients</h3>
         {ingredientsListMap}
         <br />
-        <h3>Direction</h3>
+        <h3 className='green-text'>Direction</h3>
         {instructionsMapped}
       </Container>
       {/* <Container className="d-flex flex-column bg-dark">

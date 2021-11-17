@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import "../src/CSS/landing.css";
-
-import Filters from "./pages/Filters";
-import Results from "./pages/Results";
-import Buttons from "./components/Buttons/Buttons";
-import RecipeShowPage from "./components/RecipeShowPage";
-=======
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css';
@@ -19,8 +7,8 @@ import Filters from './pages/Filters';
 import Results from './pages/Results';
 import Navbar from './components/Navbar'
 import Buttons from './components/Buttons/Buttons'
-import RandomRecipeCard from "./components/RandomRecipeCard";
->>>>>>> d166a09b52238c3e1daafeccfa85d44af0be1199
+import RecipeShowPage from './components/RecipeShowPage'
+// import RandomRecipeCard from "./components/RandomRecipeCard";
 
 function App() {
   const [recipe, setRecipe] = useState([]);
