@@ -23,7 +23,7 @@
 }
 .foodimage{
     width: 100%;
-    height: auto;
+    
 }
 .click{
     background-color: #092C4C;
@@ -40,8 +40,7 @@
     height: 60%;
     margin: 0%;
     padding-top: 25%;
-    font-size: 6em;
+    font-size: 4em;
     color: black;
-    /* background: rgba(255,255,255,0.5) */
 }
 
