@@ -120,7 +120,6 @@ const Filters = ({ apiCall }) => {
           <img src={icon} key={index} alt={index} />
         ))}
       </div>
-      <div className="progressBar">{progress}</div>
       {dynamicFilter()}
       <div className="changeQuestion">{dynamicButton()}</div>
     </div>
