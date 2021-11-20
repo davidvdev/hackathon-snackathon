@@ -21,6 +21,10 @@ const Buttons = (props) => {
     
     return (
         <div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b64ad42da155c806fe4031acf9676149888b270c
             {randomRecipe !== 0 &&
                 <>
                     <h1>{randomRecipe.obj.name}</h1>
@@ -45,6 +49,10 @@ const Buttons = (props) => {
                     </Link>  
                 </div>
             </div>          
+<<<<<<< HEAD
+=======
+
+>>>>>>> b64ad42da155c806fe4031acf9676149888b270c
         </div>
     )
 }
