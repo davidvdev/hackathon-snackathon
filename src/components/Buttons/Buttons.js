@@ -8,16 +8,16 @@ const Buttons = (props) => {
     const random = (obj) => {
         setRandomRecipe ({...randomRecipe, obj})
     }
-    function randomButton (props) {
+    // function randomButton (props) {
         
         
-        console.log(randomRecipe)
-        random(props.data)
-        props.getAppData()
+    //     console.log(randomRecipe)
+    //     random(props.data)
+    //     props.getAppData()
         
         
-        // console.log(props.data)
-    }
+    //     // console.log(props.data)
+    // }
     
     return (
         <div>
