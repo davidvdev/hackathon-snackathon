@@ -14,10 +14,19 @@
     justify-content: space-between;
     border: 1px solid #092C4C;
     width: 60%;
-    height: 17em;
     padding: .5em;
     margin: .5em;
     margin-top: 2em;
+}
+
+a.button {
+    text-decoration: none;
+    color: inherit;
+}
+.button div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .icon{
     object-fit: none;

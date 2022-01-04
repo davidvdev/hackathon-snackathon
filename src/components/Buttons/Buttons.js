@@ -30,20 +30,20 @@ const Buttons = (props) => {
                 </>
             }
             <div className='buttons'>
-                <div className='button'>
-                <h2>Find a Random Recipe</h2>
-                <img src='suprise_me.png' className='icon'/>
-                <Link to="/recipes/random">
-                    <button className='click' onClick={props.getAppData}>Random</button>
+                <Link to="/recipes/random" className="button">
+                    <div onClick={props.getAppData}>
+                        <h2>Find a Random Recipe</h2>
+                        <img src='suprise_me.png' className='icon'/>
+                            <button className='click' >Random</button>
+                    </div>
                 </Link>
-                </div>
-                <div className='button'>  
-                    <h2>Search for a Recipe</h2>
-                    <img src='find_recipe.png' className='icon'/>
-                    <Link to='/filters'>
-                        <button className='click'>Search</button>
-                    </Link>  
-                </div>
+                <Link to='/filters' className="button">
+                    <div>  
+                        <h2>Search for a Recipe</h2>
+                        <img src='find_recipe.png' className='icon'/>
+                            <button className='click'>Search</button>
+                    </div>
+                </Link>  
             </div>          
         </div>
     )
